@@ -12,6 +12,7 @@ The responsibility of the Auctioneer is to take an ad request, check with the bi
 
 Auctioneer responds with an AdObject or 204 for an ad request. The logic for the auctioneer is in [auction/service.go](/auction/service.go). 
 
+## Docker-Compose
 There are three docker-compose files:
 
 ## Normal Auction Bidder
