@@ -1,0 +1,50 @@
+# This compose file demonstrates the case where one of the bidders (bid1) does not buy the ad space and 
+# returns a 204. We force `bid1` to not buy any ad space by passing the `behaviour` option with "nobuy" as 
+# it's value.
+version: '2'
+services:
+ auctionproxy:
+    build: .
+    command: ./build/auction -listen=:8080 -proxy=auction2:8082,auction1:8081 -biddersFlag="http://bid1:8001,http://bid2:8002,http://bid3:8003,http://bid4:8004,http://bid5:8005"
+    ports:
+       - "127.0.0.1:8080:8080"
+    links:
+       - auction1
+       - auction2
+ auction1:
+    build: .
+    command: ./build/auction -listen=:8081 -biddersFlag="http://bid1:8001,http://bid2:8002,http://bid3:8003,http://bid4:8004,http://bid5:8005"
+    links:
+       - bid1
+       - bid2
+       - bid3
+       - bid4
+       - bid5
+ auction2:
+    build: .
+    command: ./build/auction -listen=:8082 -biddersFlag="http://bid1:8001,http://bid2:8002,http://bid3:8003,http://bid4:8004,http://bid5:8005"
+    links:
+       - bid1
+       - bid2
+       - bid3
+       - bid4
+       - bid5
+ bid1:
+    build: .
+    command: ./build/bidder -listen=:8001 -name=bid1 -seed=1 -behaviour=nobuy
+ bid2:
+    build: .
+    command: ./build/bidder -listen=:8002 -name=bid2 -seed=2
+
+ bid3:
+    build: .
+    command: ./build/bidder -listen=:8003 -name=bid3 -seed=3
+
+ bid4:
+    build: .
+    command: ./build/bidder -listen=:8004 -name=bid4 -seed=4
+
+ bid5:
+    build: .
+    command: ./build/bidder -listen=:8005 -name=bid5 -seed=5
+
