@@ -30,10 +30,13 @@ There are three docker-compose files:
   ```
   Response:
   ``` javascript
-  { "bid":{
+  { "bid":
+    {
     "adID":"ba665727-fd38-4a1b-b5c5-1683b72a0a97",
     "price":0.9405090880450124,
     "adPlacementID":"xxxx-xxxx",
-    "name":"bid1"}}
+    "name":"bid1"
+    }
+  }
   ```
                                
