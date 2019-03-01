@@ -2,10 +2,12 @@
 
 There are two services Auctioneer and Bidder.
 
+## Bidder
 The responsibility of the Bidder is to either place a bid for a certain ad request or skip buying it.
 
 Bidder responds with an AdObject or a 204 for an ad request. The logic for the bidder is in [bidder/service.go](/bidder/service.go). 
 
+## Auctioneer
 The responsibility of the Auctioneer is to take an ad request, check with the bidders and return the highest bidder for the ad space or a 204 if there aren't any bids.
 
 Auctioneer responds with an AdObject or 204 for an ad request. The logic for the auctioneer is in [auction/service.go](/auction/service.go). 
