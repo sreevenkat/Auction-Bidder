@@ -1,5 +1,11 @@
 # Auction-Bidder
 
+There are two services Auctioneer and Bidder.
+
+Bidder responds with an AdObject or a 204 for an ad request. The logic for the bidder is in [bidder/service.go](/bidder/service.go)
+
+Auctioneer responds with an AdObject or 204 for an ad request. The logic for the auctioneer is in [auction/service.go](/auction/service.go)
+
 There are three docker-compose files:
 
 ## Normal Auction Bidder
