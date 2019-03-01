@@ -59,7 +59,7 @@ There are three docker-compose files:
   
 ### What went well
 
-  
+- Once I got to know go-kit it was fairly easy to get around the application logic  
 
 ### What went wrong
 
@@ -67,5 +67,6 @@ There are three docker-compose files:
 
 ### What I'd do for the next iteration
 
+- Explore how to improve concurrency further
 - Would setup auto scaling
 - Add service discovery such that if a new bidder went up the auction services would be made aware of
