@@ -13,13 +13,17 @@ The responsibility of the Auctioneer is to take an ad request, check with the bi
 Auctioneer responds with an AdObject or 204 for an ad request. The logic for the auctioneer is in [auction/service.go](/auction/service.go). 
 
 ## Docker-Compose
-There are three docker-compose files:
+There are three docker-compose files: 
+
+  - [Normal Auction Bidder](/docker-compose.yml)
+  - [Slow Bidder](/slow-bidder.yml)
+  - [NoBuy Bidder](/nobuy-bidder.yml)
 
 ## Normal Auction Bidder
 
   Command: `docker-compose up`
   
-  File: docker-compose.yml
+  File: [docker-compose.yml](docker-compose.yml)
   
   This compose file demonstrates a normal usecase where any of the bidders may take more than 200ms to respond or may not buy   the adspace randomly. 
   
