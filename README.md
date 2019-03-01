@@ -57,3 +57,15 @@ There are three docker-compose files:
   This is the same as the normal auction bidder except that the bidder service **bid1** is forced to not buy any ad space by passing the `--behaviour` option with `nobuy` as its value.
   
   
+### What went well
+
+  
+
+### What went wrong
+
+- Couldn't write tests since familiarising with go-kit took some time. Did tests manually
+
+### What I'd do for the next iteration
+
+- Would setup auto scaling
+- Add service discovery such that if a new bidder went up the auction services would be made aware of
