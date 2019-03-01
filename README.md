@@ -59,7 +59,8 @@ There are three docker-compose files:
   
 ### What went well
 
-- Once I got to know go-kit it was fairly easy to get around the application logic  
+- Once I got to know go-kit it was fairly easy to get around the application logic 
+- Proxy service made it convenient to spin up additional auction services
 
 ### What went wrong
 
