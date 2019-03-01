@@ -5,7 +5,9 @@ There are three docker-compose files:
 ## Normal Auction Bidder
 
   Command: `docker-compose up`
+  
   File: docker-compose.yml
+  
   This compose file demonstrates a normal usecase where any of the bidders may take more than 200ms to respond or may not buy   the adspace randomly. 
   
   It Consists of:
@@ -43,10 +45,14 @@ There are three docker-compose files:
   ## Slow Bidder
   Command: `docker-compose -f slow-bidder.yml up`
   
+  File: slow-bidder.yml
+  
   This is the same as the normal auction bidder except that the bidder service **bid1** is forced to take more than 200ms by passing the `--behaviour` option with `sleep` as its value.
   
   ## NoBuy Bidder
   Command: `docker-compose -f nobuy-bidder.yml up`
+  
+    File: slow-bidder.yml
   
   This is the same as the normal auction bidder except that the bidder service **bid1** is forced to not buy any ad space by passing the `--behaviour` option with `nobuy` as its value.
   
